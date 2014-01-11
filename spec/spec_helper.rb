@@ -57,7 +57,10 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  # This code will be run each time you run your specs.
+  RSpec.configure do |config|
+      # This code will be run each time you run your specs.
+      config.include Rails.application.routes.url_helpers
+  end
 
 end
 
