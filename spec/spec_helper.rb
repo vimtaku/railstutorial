@@ -60,6 +60,8 @@ Spork.each_run do
   RSpec.configure do |config|
       # This code will be run each time you run your specs.
       config.include Rails.application.routes.url_helpers
+
+      Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| load f }
   end
 
 end
